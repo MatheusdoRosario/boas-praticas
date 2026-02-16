@@ -1,17 +1,11 @@
 package br.com.alura;
 
-import br.com.alura.client.ClientHttpConfiguration;
-import br.com.alura.service.AbrigoService;
-import br.com.alura.service.PetService;
-
 import java.util.Scanner;
 
 public class AdopetConsoleApplication {
 
     public static void main(String[] args) {
         CommandExecutor executor = new CommandExecutor();
-        ClientHttpConfiguration client = new ClientHttpConfiguration();
-        PetService petService  = new PetService(client);
         System.out.println("##### BOAS VINDAS AO SISTEMA ADOPET CONSOLE #####");
         try {
             int opcaoEscolhida = 0;
@@ -31,9 +25,9 @@ public class AdopetConsoleApplication {
                 } else if (opcaoEscolhida == 2) {
                     executor.executeComando(new CadastrarAbrigoCommand());
                 } else if (opcaoEscolhida == 3) {
-                    petService.listarPetsDoAbrigo();
+                    executor.executeComando(new ListarPetsDoAbrigoCommand());
                 } else if (opcaoEscolhida == 4) {
-                    petService.importarPetsDoAbrigo();
+                    executor.executeComando(new ImportarPetsDoAbrigoCommand());
                 } else if (opcaoEscolhida == 5) {
                     break;
                 } else {
