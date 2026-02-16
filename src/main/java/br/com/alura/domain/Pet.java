@@ -8,9 +8,12 @@ public class Pet {
     private String raca;
     private int idade;
     private String cor;
-    private float peso;
+    private Float peso;
 
-    public Pet(String tipo, String nome, String raca, int idade, String cor, float peso){
+    public Pet() {
+    }
+
+    public Pet(String tipo, String nome, String raca, int idade, String cor, Float peso){
         this.tipo = tipo;
         this.nome = nome;
         this.raca = raca;
@@ -43,7 +46,7 @@ public class Pet {
         return cor;
     }
 
-    public float getPeso() {
+    public Float getPeso() {
         return peso;
     }
 }
